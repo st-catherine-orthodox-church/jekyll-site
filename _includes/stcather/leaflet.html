@@ -1,0 +1,22 @@
+
+<div id="mapid" style="height:512px;width:100%;"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+<script>
+  
+  var loc = [33.607931, -81.724624];
+  
+  var mymap = L.map('mapid').setView(loc, 15);
+  L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamZtYXJpbyIsImEiOiJjajByaWh3Z3MwMjh5MnFxYTRhbHFsNHNtIn0.XTF-zXQ5JE39dzxDueOBKA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'satellite-streets-v10',
+    accessToken: 'pk.eyJ1IjoiamZtYXJpbyIsImEiOiJjajByaWh3Z3MwMjh5MnFxYTRhbHFsNHNtIn0.XTF-zXQ5JE39dzxDueOBKA'
+  }).addTo(mymap);
+  
+  var marker = L.marker(loc).addTo(mymap);
+  marker.bindPopup("<b>St. Catherine Orthodox Church</b><br/>1470 Edgefield Hwy, Aiken, SC").openPopup();
+
+</script>
