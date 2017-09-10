@@ -5,6 +5,8 @@ layout: default
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
+
+  <img class="rounded float-right ml-4" style="width:20%" src="{{ "/assets/img/icon.jpg" | relative_url }}"/>
   
   {{ content }}
 
@@ -15,6 +17,8 @@ layout: default
     <h2>
       <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
     </h2>
+
+    {{ post.content }}
   
   {% endfor %}
 
